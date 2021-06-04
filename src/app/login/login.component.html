@@ -1,21 +1,27 @@
 <div class="card position-absolute top-50 start-50 translate-middle" style="width: 18rem;">
     <div class="card-body">
-<h3 class="text-center">LOGIN</h3>
-<form>
+<h3 class="text-center">Iniciar sesión</h3>
+
+<form [formGroup]="myForm" (ngSubmit)="registro()">   <!-- Bindear directiva FormGroup declarada en login.component.ts -->
+<!-- El metodo 'registro' (declarado en login.component.ts) se ejecuta al activarse el evento 'submit' (type="submit") del botón de confirmación -->
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" formControlName="user">  <!-- Directiva 'formControlName': bindea los campos declarados en login.component.ts -->
+        <div *ngIf="myForm.get('user').errors && myForm.get('user').dirty" style="color:red; font-size:11px;">
+            Debe ingresar una dirección de correo electrónico
+        </div>
     </div>
+
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+         <div *ngIf="myForm.get('password').errors && myForm.get('password').dirty" style="color:red; font-size:11px;">
+            Debe ingresar su contraseña
+        </div>
     </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <br>
+    <button type="submit" class="btn btn-primary container-md">Confirmar</button>
   </form>
 </div>
 </div>
