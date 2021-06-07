@@ -1,27 +1,35 @@
-<div class="card position-absolute top-50 start-50 translate-middle" style="width: 18rem;">
+<div class="card position-absolute top-50 start-50 translate-middle" style="width: 22rem; background-color: rgb(28, 28, 29);">
     <div class="card-body">
-<h3 class="text-center">Iniciar sesión</h3>
-
-<form [formGroup]="myForm" (ngSubmit)="registro()">   <!-- Bindear directiva FormGroup declarada en login.component.ts -->
+<img src="https://i.imgur.com/u7dclRH.gif">
+<h2 class="text-center tech typewriter2" style="letter-spacing: 0.3rem; background-color: rgb(15, 15, 15);"> HADLEY'S HOPE</h2>
+<h6 class="text-center tech typewriter2" style="letter-spacing: 0.58rem; background-color: rgb(15, 15, 15);">COLONIAL NETWORK</h6>
+<br>
+<h6 class="text-center tech typewriter" style="letter-spacing: 0.1rem; background-color: rgb(38, 38, 38); margin-top: -2vh;">IDENTIFICACIÓN REQUERIDA</h6>
+<br>
+<br>
+<form style="margin-top: -4vh;" [formGroup]="myForm" (ngSubmit)="registro()">   <!-- Bindear directiva FormGroup declarada en login.component.ts -->
 <!-- El metodo 'registro' (declarado en login.component.ts) se ejecuta al activarse el evento 'submit' (type="submit") del botón de confirmación -->
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" formControlName="user">  <!-- Directiva 'formControlName': bindea los campos declarados en login.component.ts -->
-        <div *ngIf="myForm.get('user').errors && myForm.get('user').dirty" style="color:red; font-size:11px;">
-            Debe ingresar una dirección de correo electrónico
+      <label for="exampleInputEmail1" class="form-label tech typewriter2" style="font-size:12px;">[ CORREO_ELECTRÓNICO ]</label>
+      <input style="background-color: black;" type="email" class="form-control" id="exampleInputEmail1" formControlName="user">  <!-- Directiva 'formControlName': bindea los campos declarados en login.component.ts -->
+        <div *ngIf="myForm.get('user').errors && myForm.get('user').dirty" style="color:red; font-size:11px; background-color: black; margin-top: 1vh;">
+            ERR_email_required
         </div>
     </div>
 
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
-         <div *ngIf="myForm.get('password').errors && myForm.get('password').dirty" style="color:red; font-size:11px;">
-            Debe ingresar su contraseña
+      <label for="exampleInputPassword1" class="form-label tech typewriter2" style="font-size:12px;">[ CONTRASEÑA ]</label>
+      <input style="background-color: black;" type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+         <div *ngIf="myForm.get('password').errors && myForm.get('password').dirty" style="color:red; font-size:11px; background-color: black; margin-top: 1vh;">
+            ERR_password_required
         </div>
     </div>
 
     <br>
-    <button type="submit" class="btn btn-primary container-md">Confirmar</button>
+    <button type="submit" class="btn btn-primary container-md" style="margin-top: -3vh;">[ CONFIRMAR ]</button>
+    <div>
+      ¿Nuevo en la colonia? [ REGISTRARSE ]
+    </div>
   </form>
 </div>
 </div>
