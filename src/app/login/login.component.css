@@ -40,6 +40,13 @@ input {
     border-color: yellow;
 }
 
+.btn-primary:disabled {
+    box-shadow: none;
+    color:rgb(27, 26, 29);
+    text-shadow: none;
+    border-color: rgb(27, 26, 29);
+}
+
 .typewriter {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: .60em solid orange; /* The typwriter cursor */
